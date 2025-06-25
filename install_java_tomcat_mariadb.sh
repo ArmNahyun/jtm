@@ -39,7 +39,7 @@ echo "--- MariaDB Server 설치 완료 ---"
 
 echo "--- Apache Tomcat 10 설치 시작 ---"
 # Tomcat 다운로드 URL (최신 버전 확인 필요 - 이 예시는 10.1.x 버전)
-TOMCAT_VERSION="10.1.25" # 최신 안정 버전으로 업데이트해주세요.
+TOMCAT_VERSION="10.1.42" # 최신 안정 버전으로 업데이트해주세요.
 TOMCAT_URL="https://dlcdn.apache.org/tomcat/tomcat-10/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz"
 TOMCAT_DIR="/opt/tomcat"
 
