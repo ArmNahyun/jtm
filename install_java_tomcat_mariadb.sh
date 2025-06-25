@@ -56,9 +56,10 @@ groupadd tomcat
 useradd -s /bin/false -g tomcat -d ${TOMCAT_DIR} tomcat
 
 echo "Tomcat 디렉토리 권한 설정..."
-chown -R tomcat:tomcat ${TOMCAT_DIR}
-chmod -R u+rwx,g+rx,o+rx ${TOMCAT_DIR}
-chmod -R g+w ${TOMCAT_DIR}/work ${TOMCAT_DIR}/temp ${TOMCAT_DIR}/logs
+chown -R tomcat:tomcat ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}
+chmod -R u+rwx,g+rx,o+rx ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}
+chmod -R g+w ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}/work ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}/temp ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}/logs
+
 
 echo "Tomcat Systemd 서비스 파일 생성..."
 cat <<EOF > /etc/systemd/system/tomcat.service
