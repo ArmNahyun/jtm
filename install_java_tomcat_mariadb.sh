@@ -41,7 +41,7 @@ echo "--- Apache Tomcat 10 설치 시작 ---"
 # Tomcat 다운로드 URL (최신 버전 확인 필요 - 이 예시는 10.1.x 버전)
 TOMCAT_VERSION="10.1.42" # 최신 안정 버전으로 업데이트해주세요.
 TOMCAT_URL="https://dlcdn.apache.org/tomcat/tomcat-10/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz"
-TOMCAT_DIR="/opt/tomcat"
+TOMCAT_DIR="/opt/tomcat/apache-tomcat-10.1.42/"
 
 echo "Tomcat 다운로드 중... (${TOMCAT_URL})"
 wget -q ${TOMCAT_URL} -O /tmp/apache-tomcat-${TOMCAT_VERSION}.tar.gz
@@ -56,9 +56,9 @@ groupadd tomcat
 useradd -s /bin/false -g tomcat -d ${TOMCAT_DIR} tomcat
 
 echo "Tomcat 디렉토리 권한 설정..."
-chown -R tomcat:tomcat ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}
-chmod -R u+rwx,g+rx,o+rx ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}
-chmod -R g+w ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}/work ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}/temp ${TOMCAT_DIR}/apache-tomcat-${TOMCAT_VERSION}/logs
+chown -R tomcat:tomcat ${TOMCAT_DIR}
+chmod -R u+rwx,g+rx,o+rx ${TOMCAT_DIR}
+chmod -R g+w ${TOMCAT_DIR}/work ${TOMCAT_DIR}/temp ${TOMCAT_DIR}/logs
 
 
 echo "Tomcat Systemd 서비스 파일 생성..."
